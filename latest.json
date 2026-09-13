@@ -10,9 +10,9 @@
   "downloadUrl": "https://github.com/ResusPro/MEHdictation-releases/releases/download/v9.0.4/MEHdictation-v9.0.4-Full-Offline-Setup.exe",
   "standardDownloadUrl": "https://github.com/ResusPro/MEHdictation-releases/releases/download/v9.0.4/MEHdictation-v9.0.4-Standard-Setup.exe",
   "fullDownloadUrl": "https://github.com/ResusPro/MEHdictation-releases/releases/download/v9.0.4/MEHdictation-v9.0.4-Full-Offline-Setup.exe",
-  "standardSize": 107088852,
-  "fullSize": 621093932,
-  "standardSha256": "627152e9a841737e1494463b614554f97b68a821646ab77f72a2e31dafa0df21",
-  "fullSha256": "dfc29e8138618bc458f37b0ebb0fb9c2475d9e89fde2aff1ab10034c9e5ad601",
+  "standardSize": 107088874,
+  "fullSize": 621094080,
+  "standardSha256": "d9de6cf9fb8662bda367bbadfd32b9de9368cc1e5ea92a264fd34e79b9db910b",
+  "fullSha256": "7dcbb0e36dd7c84cc9d048740891171938ddd23fddfe9648742186fe110da2a0",
   "notes": "v9.0.4: exact approved branding; Recent activity restored; legacy history/stat recovery and DB backups; retains working hotkey/updater fixes."
 }
