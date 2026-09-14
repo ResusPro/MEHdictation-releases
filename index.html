@@ -4,398 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b0d10" />
-  <meta name="description" content="MEHdictation — fast, private clinical dictation with speech processing that runs locally on your computer." />
+  <meta name="description" content="MEHdictation — fast, private clinical dictation with speech processing that runs locally on your device." />
   <title>MEHdictation</title>
-
   <style>
-    :root {
-      --bg: #0b0d10;
-      --panel: #12161b;
-      --panel-2: #171c22;
-      --panel-border: #242b34;
-      --text: #f4f7fb;
-      --muted: #a7b0bb;
-      --accent: #7dd3fc;
-      --accent-strong: #38bdf8;
-      --accent-soft: rgba(125, 211, 252, 0.10);
-      --max-width: 760px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top, rgba(125, 211, 252, 0.07), transparent 34rem),
-        var(--bg);
-      color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    main {
-      width: min(calc(100% - 40px), var(--max-width));
-      margin: 0 auto;
-      padding: 68px 0 56px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 20px 0 38px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 13px;
-      margin-bottom: 28px;
-      padding: 12px 18px;
-      border: 1px solid var(--panel-border);
-      border-radius: 18px;
-      background: rgba(18, 22, 27, 0.72);
-    }
-
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 13px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-      color: #071018;
-      font-size: 1.15rem;
-      font-weight: 900;
-    }
-
-    .brand-name {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.035em;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2.45rem, 8vw, 4.5rem);
-      line-height: 0.96;
-      letter-spacing: -0.055em;
-      font-weight: 800;
-    }
-
-    .intro {
-      max-width: 630px;
-      margin: 22px auto 0;
-      color: var(--muted);
-      font-size: clamp(1.04rem, 2.8vw, 1.24rem);
-      line-height: 1.62;
-    }
-
-    .download-box {
-      margin: 0 0 34px;
-      padding: 24px;
-      background: linear-gradient(180deg, rgba(23, 28, 34, 0.95), rgba(18, 22, 27, 0.95));
-      border: 1px solid var(--panel-border);
-      border-radius: 22px;
-    }
-
-    .download-heading {
-      display: flex;
-      gap: 12px;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 6px;
-    }
-
-    .download-heading h2 {
-      margin: 0;
-      font-size: 1.35rem;
-      letter-spacing: -0.025em;
-    }
-
-    .version {
-      color: var(--accent);
-      font-size: 0.88rem;
-      font-weight: 750;
-    }
-
-    .download-intro {
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    .download-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .download-option {
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-      min-width: 0;
-      padding: 16px;
-      border: 1px solid var(--panel-border);
-      border-radius: 16px;
-      background: rgba(11, 13, 16, 0.45);
-    }
-
-    .download-option strong { font-size: 1rem; }
-
-    .download-option p {
-      flex: 1;
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.48;
-    }
-
-    .download-button {
-      display: block;
-      width: 100%;
-      padding: 12px 14px;
-      text-align: center;
-      text-decoration: none;
-      color: #071018;
-      background: var(--accent);
-      border-radius: 12px;
-      font-weight: 800;
-      transition: transform .15s ease, background .15s ease;
-    }
-
-    .download-button:hover {
-      background: var(--accent-strong);
-      transform: translateY(-1px);
-    }
-
-    .download-button.secondary {
-      color: var(--text);
-      background: #252c35;
-    }
-
-    .download-button.secondary:hover { background: #303945; }
-
-    .download-status {
-      margin: 13px 2px 0;
-      color: #74808d;
-      font-size: 0.8rem;
-      line-height: 1.4;
-    }
-
-    .principles {
-      display: grid;
-      gap: 14px;
-    }
-
-    .card {
-      padding: 24px 24px 22px;
-      background: rgba(18, 22, 27, 0.78);
-      border: 1px solid var(--panel-border);
-      border-radius: 20px;
-      backdrop-filter: blur(8px);
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .card h2 {
-      margin: 0 0 8px;
-      font-size: 1.28rem;
-      letter-spacing: -0.02em;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .privacy-note {
-      margin-top: 28px;
-      padding: 16px 18px;
-      text-align: center;
-      color: #d9f5ff;
-      background: var(--accent-soft);
-      border: 1px solid rgba(125, 211, 252, 0.22);
-      border-radius: 16px;
-      line-height: 1.55;
-    }
-
-    footer {
-      margin-top: 46px;
-      text-align: center;
-      color: #69737e;
-      font-size: 0.88rem;
-      line-height: 1.8;
-    }
-
-    footer a {
-      color: #87929e;
-      text-decoration: none;
-    }
-
-    footer a:hover { color: var(--text); }
-
-    @media (max-width: 620px) {
-      main {
-        width: min(calc(100% - 28px), var(--max-width));
-        padding-top: 40px;
-      }
-
-      .hero { padding-bottom: 30px; }
-      .download-grid { grid-template-columns: 1fr; }
-      .card, .download-box { padding: 20px; }
-    }
+    :root{--bg:#0b0d10;--panel:#12161b;--panel-2:#171c22;--panel-border:#242b34;--text:#f4f7fb;--muted:#a7b0bb;--accent:#7dd3fc;--accent-strong:#38bdf8;--accent-soft:rgba(125,211,252,.10);--max-width:760px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(circle at top,rgba(125,211,252,.07),transparent 34rem),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    main{width:min(calc(100% - 40px),var(--max-width));margin:0 auto;padding:68px 0 56px}.hero{text-align:center;padding:20px 0 38px}.logo-wrap{display:flex;justify-content:center;margin-bottom:22px}.logo{display:block;width:min(430px,88vw);max-height:180px;object-fit:contain;filter:drop-shadow(0 8px 22px rgba(0,0,0,.18))}.logo-fallback{display:none;align-items:center;justify-content:center;min-height:110px;padding:24px;border:1px solid var(--panel-border);border-radius:24px;background:rgba(18,22,27,.7);font-size:clamp(2rem,8vw,3.5rem);font-weight:800;letter-spacing:-.05em}h1{margin:0;font-size:clamp(2.45rem,8vw,4.5rem);line-height:.96;letter-spacing:-.055em;font-weight:800}.intro{max-width:630px;margin:22px auto 0;color:var(--muted);font-size:clamp(1.04rem,2.8vw,1.24rem);line-height:1.62}
+    .download-box{margin:0 0 34px;padding:24px;background:linear-gradient(180deg,rgba(23,28,34,.95),rgba(18,22,27,.95));border:1px solid var(--panel-border);border-radius:22px}.download-heading{display:flex;gap:12px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;margin-bottom:6px}.download-heading h2{margin:0;font-size:1.35rem;letter-spacing:-.025em}.version{color:var(--accent);font-size:.88rem;font-weight:750}.download-intro{margin:0 0 18px;color:var(--muted);line-height:1.55}.download-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.download-option{display:flex;flex-direction:column;gap:11px;min-width:0;padding:16px;border:1px solid var(--panel-border);border-radius:16px;background:rgba(11,13,16,.45)}.download-option strong{font-size:1rem}.download-option p{flex:1;margin:0;color:var(--muted);font-size:.9rem;line-height:1.48}.download-button{display:block;width:100%;padding:12px 14px;text-align:center;text-decoration:none;color:#071018;background:var(--accent);border-radius:12px;font-weight:800;transition:transform .15s ease,background .15s ease}.download-button:hover{background:var(--accent-strong);transform:translateY(-1px)}.download-button.secondary{color:var(--text);background:#252c35}.download-button.secondary:hover{background:#303945}.download-status{margin:13px 2px 0;color:#74808d;font-size:.8rem;line-height:1.4}
+    .principles{display:grid;gap:14px}.card{padding:24px 24px 22px;background:rgba(18,22,27,.78);border:1px solid var(--panel-border);border-radius:20px;backdrop-filter:blur(8px)}.eyebrow{display:inline-block;margin-bottom:10px;color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.card h2{margin:0 0 8px;font-size:1.28rem;letter-spacing:-.02em}.card p{margin:0;color:var(--muted);line-height:1.6}.privacy-note{margin-top:28px;padding:16px 18px;text-align:center;color:#d9f5ff;background:var(--accent-soft);border:1px solid rgba(125,211,252,.22);border-radius:16px;line-height:1.55}footer{margin-top:46px;text-align:center;color:#69737e;font-size:.88rem}footer a{color:#87929e;text-decoration:none}footer a:hover{color:var(--text)}
+    @media(max-width:620px){main{width:min(calc(100% - 28px),var(--max-width));padding-top:40px}.hero{padding-bottom:30px}.download-grid{grid-template-columns:1fr}.card,.download-box{padding:20px}}
   </style>
 </head>
-
 <body>
   <main>
     <section class="hero">
-      <div class="brand" aria-label="MEHdictation">
-        <div class="brand-mark">M</div>
-        <div class="brand-name">MEHdictation</div>
+      <div class="logo-wrap">
+        <img class="logo" src="mehdictation-logo.svg" alt="MEHdictation" onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex';" />
+        <div id="logoFallback" class="logo-fallback">MEHdictation</div>
       </div>
-
       <h1>Clinical dictation,<br />without the cloud.</h1>
-
-      <p class="intro">
-        MEHdictation is a simple Windows dictation tool designed to make clinical
-        documentation quicker while keeping speech processing and clinical data
-        on your own computer.
-      </p>
+      <p class="intro">MEHdictation is a simple Windows dictation tool designed to make clinical documentation quicker while keeping speech processing and clinical data on your own computer.</p>
     </section>
 
     <section class="download-box" aria-labelledby="downloadTitle">
-      <div class="download-heading">
-        <h2 id="downloadTitle">Download for Windows</h2>
-        <span id="latestVersion" class="version">Checking latest release…</span>
-      </div>
-
-      <p class="download-intro">
-        Use Full Offline for a first installation. If MEHdictation is already installed,
-        the smaller Standard / Update installer is normally all you need.
-      </p>
-
+      <div class="download-heading"><h2 id="downloadTitle">Download for Windows</h2><span id="latestVersion" class="version">Checking latest release…</span></div>
+      <p class="download-intro">Choose the smaller installer for routine updates. Use the Full Offline installer for a first installation or a computer that needs the complete local speech-recognition runtime included.</p>
       <div class="download-grid">
-        <div class="download-option">
-          <strong>Full Offline</strong>
-          <p>
-            Recommended for a first installation. Includes the local speech runtime
-            and Whisper model, so dictation can run without cloud transcription.
-          </p>
-          <a id="offlineDownload" class="download-button" href="https://github.com/ResusPro/MEHdictation-releases/releases/latest">
-            Download Full Offline
-          </a>
-        </div>
-
-        <div class="download-option">
-          <strong>Standard / Update</strong>
-          <p>
-            The smaller installer for an existing MEHdictation installation that
-            already has the local speech runtime.
-          </p>
-          <a id="standardDownload" class="download-button secondary" href="https://github.com/ResusPro/MEHdictation-releases/releases/latest">
-            Download Standard
-          </a>
-        </div>
+        <div class="download-option"><strong>Standard / Update</strong><p>The smaller installer. Reuses the existing local speech runtime when it is already installed.</p><a id="standardDownload" class="download-button" href="https://github.com/ResusPro/MEHdictation-releases/releases/latest">Download Standard</a></div>
+        <div class="download-option"><strong>Full Offline</strong><p>Includes the local speech runtime and Whisper model for first-time or fully offline installation.</p><a id="offlineDownload" class="download-button secondary" href="https://github.com/ResusPro/MEHdictation-releases/releases/latest">Download Full Offline</a></div>
       </div>
-
-      <p id="downloadStatus" class="download-status">
-        Download links automatically follow the latest published MEHdictation release.
-      </p>
+      <p id="downloadStatus" class="download-status">Download links automatically follow the latest published MEHdictation release.</p>
     </section>
 
     <section class="principles" aria-label="Core principles">
-      <article class="card">
-        <span class="eyebrow">Local</span>
-        <h2>Runs on your computer</h2>
-        <p>
-          Speech recognition and dictation processing happen locally on the
-          Windows computer running MEHdictation.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="eyebrow">Private</span>
-        <h2>Your clinical data stays local</h2>
-        <p>
-          Dictated audio and clinical text are not sent to a cloud transcription
-          service for processing.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="eyebrow">Simple</span>
-        <h2>Built to get out of the way</h2>
-        <p>
-          Start dictating, get the words you need, and move on. No cloud account,
-          online patient record or remote transcription workflow is required.
-        </p>
-      </article>
+      <article class="card"><span class="eyebrow">Local</span><h2>Runs on your computer</h2><p>Speech recognition and dictation processing happen locally on the Windows computer running MEHdictation.</p></article>
+      <article class="card"><span class="eyebrow">Private</span><h2>Your clinical data stays local</h2><p>Dictated audio and clinical text are not sent to a cloud transcription service for processing.</p></article>
+      <article class="card"><span class="eyebrow">Simple</span><h2>Built to get out of the way</h2><p>Start dictating, get the words you need, and move on. No cloud account, online patient record or remote transcription workflow is required.</p></article>
     </section>
 
-    <div class="privacy-note">
-      <strong>Local-first by design.</strong>
-      No cloud transcription. No audio upload. No dictated patient data sent away for processing.
-    </div>
-
-    <footer>
-      MEHdictation ·
-      <a href="https://github.com/ResusPro/MEHdictation-releases/releases/latest">release details &amp; checksums</a>
-      · <a href="LICENSE">open-source licence</a>
-    </footer>
+    <div class="privacy-note"><strong>Local-first by design.</strong> No cloud transcription. No audio upload. No dictated patient data sent away for processing.</div>
+    <footer>MEHdictation · <a href="https://github.com/ResusPro/MEHdictation-releases/releases/latest">release downloads</a></footer>
   </main>
 
   <script>
-    const standardButton = document.getElementById("standardDownload");
-    const offlineButton = document.getElementById("offlineDownload");
-    const latestVersion = document.getElementById("latestVersion");
-    const downloadStatus = document.getElementById("downloadStatus");
-
-    function prettySize(bytes) {
-      if (!Number.isFinite(bytes) || bytes <= 0) return "";
-      return `${Math.round(bytes / (1024 * 1024))} MB`;
-    }
-
-    fetch("latest.json", { cache: "no-store" })
-      .then(response => {
-        if (!response.ok) throw new Error(`Manifest returned ${response.status}`);
-        return response.json();
-      })
-      .then(manifest => {
-        if (manifest.version) latestVersion.textContent = `MEHdictation v${manifest.version}`;
-        else latestVersion.textContent = "Latest release";
-
-        if (/^https:\/\//.test(manifest.fullDownloadUrl || "")) {
-          offlineButton.href = manifest.fullDownloadUrl;
-          const size = prettySize(manifest.fullSize);
-          offlineButton.textContent = size ? `Download Full Offline · ${size}` : "Download Full Offline";
-        }
-
-        if (/^https:\/\//.test(manifest.standardDownloadUrl || "")) {
-          standardButton.href = manifest.standardDownloadUrl;
-          const size = prettySize(manifest.standardSize);
-          standardButton.textContent = size ? `Download Standard · ${size}` : "Download Standard";
-        }
-
-        downloadStatus.textContent = "These links automatically follow the latest published MEHdictation release.";
-      })
-      .catch(() => {
-        latestVersion.textContent = "Latest release";
-        downloadStatus.textContent = "Automatic release information is unavailable at the moment. The buttons will open the latest GitHub release page.";
-      });
+    const manifestUrl='latest.json';
+    function prettySize(bytes){if(!Number.isFinite(bytes)||bytes<=0)return'';const mb=bytes/(1024*1024);return `${Math.round(mb)} MB`}
+    fetch(manifestUrl,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error();return r.json()}).then(m=>{
+      document.getElementById('latestVersion').textContent=m.version?`MEHdictation v${m.version}`:'Latest release';
+      if(/^https:\/\//.test(m.standardDownloadUrl||'')){const b=document.getElementById('standardDownload');b.href=m.standardDownloadUrl;b.textContent=`Download Standard${m.standardSize?' · '+prettySize(m.standardSize):''}`}
+      if(/^https:\/\//.test(m.fullDownloadUrl||'')){const b=document.getElementById('offlineDownload');b.href=m.fullDownloadUrl;b.textContent=`Download Full Offline${m.fullSize?' · '+prettySize(m.fullSize):''}`}
+      document.getElementById('downloadStatus').textContent='These links automatically follow the latest published MEHdictation release.';
+    }).catch(()=>{document.getElementById('latestVersion').textContent='Latest release';document.getElementById('downloadStatus').textContent='Direct release detection is unavailable at the moment. The buttons will open the latest GitHub release page.'});
   </script>
 </body>
 </html>
