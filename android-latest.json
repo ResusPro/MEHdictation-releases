@@ -1,8 +1,8 @@
 {
-  "version": "0.4.9",
-  "versionCode": 4900,
+  "version": "0.4.10",
+  "versionCode": 41000,
   "packageName": "com.resuspro.mehdictation",
-  "downloadUrl": "https://github.com/ResusPro/MEHdictation-releases/releases/download/android-v0.4.9/MEHdictation-Android-v0.4.9.apk",
-  "sha256": "1da1db83c6457502680c35e2c4645efba563b658174d2415356421e1828b971c",
-  "notes": "Android v0.4.9: stable Android release channel, in-app update checking, verified APK download and installer hand-off."
+  "downloadUrl": "https://github.com/ResusPro/MEHdictation-releases/releases/download/android-v0.4.10/MEHdictation-Android-v0.4.10.apk",
+  "sha256": "0d6183f11f0bd7716d971c2cc3403e0fb6aaa3bd33997b931e4dbe150c617b3b",
+  "notes": "Android v0.4.10: stable Android release channel, in-app update checking, verified APK download and installer hand-off."
 }
