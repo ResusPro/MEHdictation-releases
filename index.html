@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0b0d10">
-<meta name="description" content="MEHdictation — private clinical dictation with local speech recognition and optional encrypted sync.">
+<meta name="description" content="MEHdictation — local-first dictation for Windows and Android with optional end-to-end encrypted cross-device sync.">
 <title>MEHdictation</title>
 <style>
 :root{--bg:#0b0d10;--panel:#12161b;--border:#242b34;--text:#f4f7fb;--muted:#a7b0bb;--accent:#7dd3fc;--accent2:#38bdf8;--accent-soft:rgba(125,211,252,.10);--max:760px}
@@ -18,7 +18,7 @@ h1{margin:0;font-size:clamp(2.45rem,8vw,4.5rem);line-height:.96;letter-spacing:-
 .intro{max-width:640px;margin:22px auto 0;color:var(--muted);font-size:clamp(1.04rem,2.8vw,1.24rem);line-height:1.62}
 .principles{display:grid;gap:14px}.card{padding:24px;background:rgba(18,22,27,.78);border:1px solid var(--border);border-radius:20px}.eyebrow{display:inline-block;margin-bottom:10px;color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.card h2{margin:0 0 8px;font-size:1.28rem}.card p{margin:0;color:var(--muted);line-height:1.6}
 .privacy-note{margin:28px 0 34px;padding:16px 18px;text-align:center;color:#d9f5ff;background:var(--accent-soft);border:1px solid rgba(125,211,252,.22);border-radius:16px;line-height:1.55}
-.download-box{padding:24px;background:linear-gradient(180deg,rgba(23,28,34,.95),rgba(18,22,27,.95));border:1px solid var(--border);border-radius:22px}.download-heading{display:flex;gap:12px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;margin-bottom:6px}.download-heading h2{margin:0;font-size:1.35rem}.version{color:var(--accent);font-size:.88rem;font-weight:750}.download-intro{margin:0 0 18px;color:var(--muted);line-height:1.55}.download-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.download-option{display:flex;flex-direction:column;gap:11px;padding:16px;border:1px solid var(--border);border-radius:16px;background:rgba(11,13,16,.45)}.download-option p{flex:1;margin:0;color:var(--muted);font-size:.9rem;line-height:1.48}.download-button{display:block;padding:12px 14px;text-align:center;text-decoration:none;color:#071018;background:var(--accent);border-radius:12px;font-weight:800}.download-button:hover{background:var(--accent2)}.download-button.secondary{color:var(--text);background:#252c35}.download-button.secondary:hover{background:#303945}.download-status{margin:13px 2px 0;color:#74808d;font-size:.8rem}
+.download-box{padding:24px;background:linear-gradient(180deg,rgba(23,28,34,.95),rgba(18,22,27,.95));border:1px solid var(--border);border-radius:22px}.download-heading{display:flex;gap:12px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;margin-bottom:6px}.download-heading h2{margin:0;font-size:1.35rem}.version{color:var(--accent);font-size:.88rem;font-weight:750}.download-intro{margin:0 0 18px;color:var(--muted);line-height:1.55}.download-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.download-option{display:flex;flex-direction:column;gap:11px;padding:16px;border:1px solid var(--border);border-radius:16px;background:rgba(11,13,16,.45)}.download-option p{flex:1;margin:0;color:var(--muted);font-size:.9rem;line-height:1.48}.download-button{display:block;padding:12px 14px;text-align:center;text-decoration:none;color:#071018;background:var(--accent);border-radius:12px;font-weight:800}.download-button:hover{background:var(--accent2)}.download-button.secondary{color:var(--text);background:#252c35}.download-button.secondary:hover{background:#303945}.download-status{margin:13px 2px 0;color:#74808d;font-size:.8rem}
 footer{margin-top:46px;text-align:center;color:#69737e;font-size:.88rem}footer a{color:#87929e;text-decoration:none}
 @media(max-width:620px){main{width:min(calc(100% - 28px),var(--max));padding-top:38px}.hero{padding-bottom:30px}.logo-card{padding:6px;border-radius:14px}.download-grid{grid-template-columns:1fr}.card,.download-box{padding:20px}}
 </style>
@@ -28,39 +28,52 @@ footer{margin-top:46px;text-align:center;color:#69737e;font-size:.88rem}footer a
 <section class="hero">
   <div class="logo-card"><img src="mehdictation-logo-web.jpg?v=2" alt="MEHdictation"></div>
   <h1>Clinical dictation,<br>without cloud transcription.</h1>
-  <p class="intro">MEHdictation is a simple Windows dictation tool designed to make clinical documentation quicker. Speech recognition and dictated clinical text stay on your computer, with optional end-to-end encrypted sync for your Dictionary, Templates and aggregate usage statistics.</p>
+  <p class="intro">MEHdictation is a local-first dictation tool for Windows and Android. Speech recognition runs on your device. Dictionary entries, Templates and aggregate usage statistics can sync end-to-end encrypted across your devices, while the <strong>Private</strong> control keeps sensitive transcript history local by default.</p>
 </section>
 
 <section class="principles" aria-label="Core principles">
-  <article class="card"><span class="eyebrow">Local</span><h2>Runs on your computer</h2><p>Speech recognition and dictation processing happen locally on the Windows computer running MEHdictation.</p></article>
-  <article class="card"><span class="eyebrow">Private</span><h2>Your dictation stays local</h2><p>Dictated audio and clinical text are not sent to a cloud transcription service for processing.</p></article>
-  <article class="card"><span class="eyebrow">Optional sync</span><h2>Sync only what you choose</h2><p>Private Sync can synchronise Dictionary entries, Templates and aggregate usage statistics between your devices using end-to-end encryption. Audio, dictated clinical text and Recent activity are not synced.</p></article>
-  <article class="card"><span class="eyebrow">Simple</span><h2>Built to get out of the way</h2><p>Core dictation works locally without a cloud transcription account. Optional Private Sync can be enabled when you want your non-dictation data available across devices.</p></article>
+  <article class="card"><span class="eyebrow">Local</span><h2>Runs on your devices</h2><p>Windows uses the local MEHdictation speech runtime and Android uses on-device speech recognition. Dictation is not sent to a cloud transcription service.</p></article>
+  <article class="card"><span class="eyebrow">Private</span><h2>Sensitive transcript history stays local</h2><p><strong>Private</strong> is on by default and is intended for clinical or other sensitive dictation. In Private mode, transcript history remains on that device. Microphone audio never syncs in either mode.</p></article>
+  <article class="card"><span class="eyebrow">Optional sync</span><h2>One setup across Windows and Android</h2><p>Dictionary entries, Templates and aggregate usage statistics can sync end-to-end encrypted between your devices. When <strong>Private is off</strong>, cleaned transcript history can also sync. Audio, application names and window titles do not sync.</p></article>
+  <article class="card"><span class="eyebrow">Simple</span><h2>Built to get out of the way</h2><p>Core dictation remains local-first. The Private control is available directly from dictation mode so you can switch between sensitive and general-purpose use without digging through Settings.</p></article>
 </section>
 
-<div class="privacy-note"><strong>Local-first by design.</strong> No cloud transcription. No audio upload. No dictated patient text is synced. Optional end-to-end encrypted sync is available for Dictionary, Templates and aggregate usage statistics.</div>
+<div class="privacy-note"><strong>Local-first by design.</strong> No cloud transcription. Audio never syncs. Keep <strong>Private</strong> on for clinical or sensitive dictation; turn it off only when you want that cleaned transcript history included in your end-to-end encrypted cross-device sync.</div>
 
 <section class="download-box" aria-labelledby="downloadTitle">
-  <div class="download-heading"><h2 id="downloadTitle">Download for Windows</h2><span id="latestVersion" class="version">Checking latest release…</span></div>
-  <p class="download-intro">Choose the smaller installer for routine updates. Use the Full Offline installer for a first installation or a computer that needs the complete local speech-recognition runtime included.</p>
+  <div class="download-heading"><h2 id="downloadTitle">Downloads</h2><span id="latestVersion" class="version">Checking latest releases…</span></div>
+  <p class="download-intro">Windows Standard is the smaller updater; Full Offline includes the local speech runtime and model. Android installs as an APK and includes in-app update checking.</p>
   <div class="download-grid">
     <div class="download-option"><strong>Standard / Update</strong><p>The smaller installer. Reuses the existing local speech runtime when it is already installed.</p><a id="standardDownload" class="download-button" href="https://github.com/ResusPro/MEHdictation-releases/releases/latest">Download Standard</a></div>
     <div class="download-option"><strong>Full Offline</strong><p>Includes the local speech runtime and Whisper model for first-time or fully offline installation.</p><a id="offlineDownload" class="download-button secondary" href="https://github.com/ResusPro/MEHdictation-releases/releases/latest">Download Full Offline</a></div>
+    <div class="download-option"><strong>Android</strong><p>On-device Android dictation keyboard. <span id="androidVersion">Checking version…</span></p><a id="androidDownload" class="download-button" href="ANDROID.md">Download Android APK</a></div>
   </div>
-  <p id="downloadStatus" class="download-status">Download links automatically follow the latest published MEHdictation release.</p>
+  <p id="downloadStatus" class="download-status">Windows and Android download links automatically follow their latest validated release manifests.</p>
 </section>
 
 <footer>MEHdictation · <a href="https://github.com/ResusPro/MEHdictation-releases/releases/latest">release downloads</a></footer>
 </main>
 <script>
-const manifestUrl='latest.json';
+const windowsManifestUrl='latest.json';
+const androidManifestUrl='android-latest.json';
 function prettySize(bytes){if(!Number.isFinite(bytes)||bytes<=0)return'';return `${Math.round(bytes/(1024*1024))} MB`}
-fetch(manifestUrl,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error();return r.json()}).then(m=>{
-  const v=document.getElementById('latestVersion'),s=document.getElementById('standardDownload'),f=document.getElementById('offlineDownload'),st=document.getElementById('downloadStatus');
-  v.textContent=m.version?`MEHdictation v${m.version}`:'Latest release';
-  if(/^https:\/\//.test(m.standardDownloadUrl||'')){s.href=m.standardDownloadUrl;s.textContent=`Download Standard${m.standardSize?' · '+prettySize(m.standardSize):''}`}
-  if(/^https:\/\//.test(m.fullDownloadUrl||'')){f.href=m.fullDownloadUrl;f.textContent=`Download Full Offline${m.fullSize?' · '+prettySize(m.fullSize):''}`}
-  st.textContent='These links automatically follow the latest published MEHdictation release.';
-}).catch(()=>{document.getElementById('latestVersion').textContent='Latest release';document.getElementById('downloadStatus').textContent='Direct release detection is unavailable at the moment. The buttons will open the latest GitHub release page.'});
+Promise.allSettled([
+  fetch(windowsManifestUrl,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error();return r.json()}),
+  fetch(androidManifestUrl,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error();return r.json()})
+]).then(([winResult,androidResult])=>{
+  const v=document.getElementById('latestVersion'),s=document.getElementById('standardDownload'),f=document.getElementById('offlineDownload'),a=document.getElementById('androidDownload'),av=document.getElementById('androidVersion'),st=document.getElementById('downloadStatus');
+  if(winResult.status==='fulfilled'){
+    const m=winResult.value;
+    v.textContent=m.version?`Windows v${m.version}`:'Latest Windows release';
+    if(/^https:\/\//.test(m.standardDownloadUrl||'')){s.href=m.standardDownloadUrl;s.textContent=`Download Standard${m.standardSize?' · '+prettySize(m.standardSize):''}`}
+    if(/^https:\/\//.test(m.fullDownloadUrl||'')){f.href=m.fullDownloadUrl;f.textContent=`Download Full Offline${m.fullSize?' · '+prettySize(m.fullSize):''}`}
+  }else{v.textContent='Latest Windows release'}
+  if(androidResult.status==='fulfilled'){
+    const m=androidResult.value;
+    av.textContent=m.version?`Latest: v${m.version}`:'Latest validated Android build';
+    if(/^https:\/\//.test(m.downloadUrl||'')){a.href=m.downloadUrl;a.textContent=m.version?`Download Android v${m.version}`:'Download Android APK'}
+  }else{av.textContent='Latest validated Android build'}
+  st.textContent='These links automatically follow the latest validated Windows and Android release manifests.';
+});
 </script>
 </body></html>
