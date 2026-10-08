@@ -1,10 +1,10 @@
 # MEHdictation for Android
 
-Latest validated build: **v0.4.22**
+Latest validated build: **v0.4.23**
 
-[Download the latest validated Android APK](https://github.com/ResusPro/MEHdictation-releases/releases/download/android-v0.4.22/MEHdictation-Android-v0.4.22.apk)
+[Download the latest validated Android APK](https://github.com/ResusPro/MEHdictation-releases/releases/download/android-v0.4.23/MEHdictation-Android-v0.4.23.apk)
 
 Package: com.resuspro.mehdictation
-SHA-256: b1029ebb5730e2e4b7451d406a02b65035683bace01594d908bffb7bcaa5f6a0
+SHA-256: 9ffa52a827806c1d38d0ca1b7d515422dce60a407852b6dddf1ff74f58d4399b
 
 This page is updated automatically only after the Android build has passed compile, regression tests, signing, and APK validation.
