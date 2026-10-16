@@ -1,8 +1,8 @@
 {
-  "version": "0.4.25",
-  "versionCode": 42500,
+  "version": "0.4.27",
+  "versionCode": 42700,
   "packageName": "com.resuspro.mehdictation",
-  "downloadUrl": "https://github.com/ResusPro/MEHdictation-releases/releases/download/android-v0.4.25/MEHdictation-Android-v0.4.25.apk",
-  "sha256": "d3702116acca063a1365e7d3d2f86047d6010928896ee56df6287fd622b5b745",
-  "notes": "Android v0.4.25: one-shot local punctuation test comparing untouched recognition results with processing stages and final output. Recognition behaviour is unchanged."
+  "downloadUrl": "https://github.com/ResusPro/MEHdictation-releases/releases/download/android-v0.4.27/MEHdictation-Android-v0.4.27.apk",
+  "sha256": "c473ca7fa0c68840b8b9783b281c2a6c3188ba8796222d55b44da5f08ed9db0f",
+  "notes": "Android v0.4.27 release candidate: improve first-dictation microphone readiness/recovery and hand numeric, password, PIN, telephone and date fields to an enabled typing keyboard. Includes regression tests."
 }
