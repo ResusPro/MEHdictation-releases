@@ -1,8 +1,8 @@
 {
-  "version": "0.4.27",
-  "versionCode": 42700,
+  "version": "0.4.28",
+  "versionCode": 42800,
   "packageName": "com.resuspro.mehdictation",
-  "downloadUrl": "https://github.com/ResusPro/MEHdictation-releases/releases/download/android-v0.4.27/MEHdictation-Android-v0.4.27.apk",
-  "sha256": "c473ca7fa0c68840b8b9783b281c2a6c3188ba8796222d55b44da5f08ed9db0f",
-  "notes": "Android v0.4.27 release candidate: improve first-dictation microphone readiness/recovery and hand numeric, password, PIN, telephone and date fields to an enabled typing keyboard. Includes regression tests."
+  "downloadUrl": "https://github.com/ResusPro/MEHdictation-releases/releases/download/android-v0.4.28/MEHdictation-Android-v0.4.28.apk",
+  "sha256": "864649f02319e664ab974404bda970e13832e8a8dbcefcdf18f835f100f83d28",
+  "notes": "Android v0.4.28 release candidate: custom MEHdictation app icon; clearer microphone-start readiness and subtle haptic feedback; privacy-safe local diagnostics for empty dictations. Retains numeric/password keyboard switching."
 }
