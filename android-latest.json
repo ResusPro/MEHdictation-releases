@@ -1,8 +1,8 @@
 {
-  "version": "0.4.29",
-  "versionCode": 42900,
+  "version": "0.4.30",
+  "versionCode": 43000,
   "packageName": "com.resuspro.mehdictation",
-  "downloadUrl": "https://github.com/ResusPro/MEHdictation-releases/releases/download/android-v0.4.29/MEHdictation-Android-v0.4.29.apk",
-  "sha256": "4293942a4c89d4e870f215d31acd8a3be54c6289e6fac7cf063c5ecc5dccd963",
-  "notes": "Android v0.4.29 release candidate: detect an empty, stalled microphone-recognition session and restart recognition once; guard stale finalisation callbacks; retain safe capture diagnostics, MEHdictation branding and typing-keyboard switching."
+  "downloadUrl": "https://github.com/ResusPro/MEHdictation-releases/releases/download/android-v0.4.30/MEHdictation-Android-v0.4.30.apk",
+  "sha256": "1d50c9a5e097fe925c58e231a550aa2afc682c247832a7acd16997b8c4f93a8e",
+  "notes": "Android v0.4.30 release candidate: two-stage detection of stalled microphone recognition, one automatic restart, and timing-only diagnostics showing watchdog decisions. Uses existing MEHdictation branding and keyboard switching."
 }
